@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../components/common/Header"), {
   ssr: false,
 });
@@ -10,25 +10,50 @@ export default function Home() {
   return (
     <>
       <Header />
-      <button
-            aria-label="search"
-            class="h-10 w-10 rounded-xl border bg-gray-100 active:bg-gray-200 md:hidden dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-          >
-            <svg
-              xmlns="http://ww50w3.org/2000/svg"
-              class="mx-auto w-4 fill-current text-gray-600 dark:text-gray-300"
-              viewBox="0 0 35.997 36.004"
-            >
-              <path
-                id="Icon_awesome-search"
-                data-name="search"
-                d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z"
-              ></path>
-            </svg>
-          </button>
       <div class="py-12">
+        <div class="flex justify-center">
+          <div class="mb-3 xl:w-96">
+            <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+              <input
+                type="search"
+                class="relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="button-addon1"
+              />
+              <button
+                class="relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+                type="button"
+                id="button-addon1"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+                class="inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] ml-10"
+              >
+                Add a Post
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-          <div class="mb-12 space-y-2 pt-20">
+          <div class="mb-12 space-y-2 mt-20">
             <h2 class="text-3xl font-bold text-black-800 md:text-4xl dark:text-black">
               Popular Sites
             </h2>
