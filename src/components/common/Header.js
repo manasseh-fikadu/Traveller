@@ -2,6 +2,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { PhantomWalletName } from "@solana/wallet-adapter-wallets";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+const usePost = dynamic(() => import('../../contexts/post'), { ssr: false });
 
 export default function Header() {
   // const history = useHistory();
@@ -10,10 +11,7 @@ export default function Header() {
   const [postTitle, setPostTitle] = useState("");
   const [postContent, setPostContent] = useState("");
 
-  const User = {
-    name: "John Doe",
-    avatar: "https://avatarfiles.alphacoders.com/201/201969.jpg",
-  };
+  const { post, setPost } = usePost();
 
   const onConnect = () => {
     setConnecting(true);
