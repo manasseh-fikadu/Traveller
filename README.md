@@ -1,4 +1,4 @@
-## Checkout the Smart Contract here 👉 https://beta.solpg.io/63fca51067edfe0f001069d7.
+Checkout the Smart Contract here 👉 https://beta.solpg.io/63fca51067edfe0f001069d7.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
