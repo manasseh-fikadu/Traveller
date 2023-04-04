@@ -11,15 +11,16 @@ import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pub
 import { utf8 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 import { set } from "mongoose";
 
-const PostContext = createContext();
+const PostContext = createContext(null);
 
-export const usePost = () => {
-  const context = useContext(PostContext);
-  if (!context) {
-    throw new Error("usePost must be used within a PostProvider");
-  }
-  return context;
-};
+// export const usePost = () => {
+//   const context = useContext(PostContext);
+//   console.log(context)
+//   if (!context) {
+//     throw new Error("usePost must be used within a PostProvider");
+//   }
+//   return context;
+// };
 
 export const PostProvider = ({ children }) => {
   const [user, setUser] = useState();

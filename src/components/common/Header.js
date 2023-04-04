@@ -2,7 +2,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { PhantomWalletName } from "@solana/wallet-adapter-wallets";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-const usePost = dynamic(() => import('../../contexts/post'), { ssr: false });
+// import { usePost } from "../../contexts/post";
 
 export default function Header() {
   // const history = useHistory();
@@ -11,7 +11,14 @@ export default function Header() {
   const [postTitle, setPostTitle] = useState("");
   const [postContent, setPostContent] = useState("");
 
-  const { post, setPost } = usePost();
+  // initialize User here
+  const [User, setUser] = useState({
+    name: "John Doe",
+    avatar: "https://i.pravatar.cc/300",
+  });
+  
+
+  // const { post, setPost } = usePost();
 
   const onConnect = () => {
     setConnecting(true);
@@ -22,7 +29,7 @@ export default function Header() {
     <header>
       <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <a href="https://flowbite.com" class="flex items-center">
+          <a href="/" class="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
               class="mr-3 h-6 sm:h-9"
@@ -40,6 +47,12 @@ export default function Header() {
                   class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
                 >
                   {connecting ? "Connecting" : ""}
+                </a>
+              </button>
+              {/* a vlog button to the left side of the profile */}
+              <button>
+                <a href="/vlog" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                  Vlog
                 </a>
               </button>
               <a
